@@ -1,7 +1,5 @@
 package hiber.model;
 
-import hiber.model.Car;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -107,7 +105,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                car.toString() +
                 '}';
     }
 

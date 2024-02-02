@@ -7,6 +7,7 @@ import java.util.Objects;
 @Table(name = "cars")
 public class Car {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -15,6 +16,10 @@ public class Car {
 
     @Column(name = "series")
     private int series;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     public Car() {
@@ -49,8 +54,14 @@ public class Car {
         this.series = series;
     }
 
+    public User getUser() {
+        return user;
+    }
 
-
+    public User setUser(User user) {
+        this.user = user;
+        return user;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -73,4 +84,5 @@ public class Car {
                 ", series=" + series +
                 '}';
     }
+
 }
