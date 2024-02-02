@@ -1,5 +1,7 @@
 package hiber.model;
 
+import hiber.model.Car;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -21,8 +23,8 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @MapsId
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "car_id")
     private Car car;
 
     public User() {
