@@ -24,10 +24,7 @@ public class UserDaoImp implements UserDao {
         sessionFactory.openSession().save(user);
     }
 
-    @Override
-    public void add(Car car) {
-        sessionFactory.openSession().save(car);
-    }
+
 
 
     @Override
@@ -37,11 +34,7 @@ public class UserDaoImp implements UserDao {
         return query.getResultList();
     }
 
-    @Override
-    public List<Car> listCars() {
-        TypedQuery<Car> query = sessionFactory.openSession().createQuery("from Car", Car.class);
-        return query.getResultList();
-    }
+
 
     @Override
     public User getUserByCar(String model, int series) {
